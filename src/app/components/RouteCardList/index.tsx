@@ -6,7 +6,7 @@ import Image from "next/image";
 import { RouteInfo } from "@/app/shared/RouteData/routeInfo";
 import GasIcon from "@/app/assets/defaultGas.svg";
 
-export const RouteCardList = () => {
+export const RouteCardList:FC = () => {
   return (
     <div className="w-full">
       <Card
