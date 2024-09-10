@@ -13,12 +13,15 @@ export const ExchangeCard = ({
   dropdownOptions,
   dropdownDefaultValue,
   dropdownGetValue,
+  disabled = false,
+  hasValue = true,
 }: ExchangeCardProps) => {
   const USE_MAX = "Use Max";
+ 
   return (
     <div className="container bg-grey rounded-[16px] pt-4 pb-3 px-4">
       <div className="flex mb-1">
-        <Input onChange={onChange} label={labelText} value={inputValue} />
+        <Input onChange={onChange} label={labelText} value={inputValue} disable={disabled} hasValue={hasValue}/>
         <div className="flex items-end w-full justify-end">
           <Dropdown
             options={dropdownOptions}

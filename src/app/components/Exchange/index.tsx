@@ -93,6 +93,8 @@ export const ExchangeContainer = ({
         dropdownOptions={sellDropdownOptions}
         dropdownDefaultValue={sellDropdownOptions[0]}
         dropdownGetValue={setSellSelectedCurrency}
+        disabled={false}
+        // hasValue={true}
       />
       <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]" onClick={reverseClick}>
         <div className="bg-white flex justify-center items-center rounded-[12px] w-[40px] h-[40px]">
@@ -109,6 +111,8 @@ export const ExchangeContainer = ({
         dropdownOptions={recciveDropdownOptions}
         dropdownDefaultValue={recciveDropdownOptions[5]}
         dropdownGetValue={setRecciveSelectedCurrency}
+        disabled={true}
+        hasValue={Number(sellValue) > 0}
       />
     </div>
   );

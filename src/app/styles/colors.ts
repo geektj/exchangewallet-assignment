@@ -14,5 +14,6 @@ export const colors = {
     textSuccess: '#02B151',
     dangerAccent: '#FEF2F2',
     textDanger: '#DE2424',
-    darkText: '#494656'
+    darkText: '#494656',
+    disable: '#B3B1B8',
 }

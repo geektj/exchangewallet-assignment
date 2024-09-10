@@ -15,4 +15,6 @@ export interface ExchangeCardProps {
   dropdownOptions: OptionProps[];
   dropdownDefaultValue: OptionProps;
   dropdownGetValue: (value: string) => void;
+  disabled?: boolean;
+  hasValue?: boolean;
 }
