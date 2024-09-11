@@ -1,11 +1,29 @@
 import React, { FC } from "react";
 import { Card } from "@/app/ui/Card";
-import { LeftDoubleArrowIcon } from "@/app/assets/icon";
 import Image from "next/image";
 // import { RouteDataProps } from '@/app/shared/RouteData/type';
 import { RouteInfo } from "@/app/shared/RouteData/routeInfo";
 import GasIcon from "@/app/assets/defaultGas.svg";
 import { useExchange } from "@/app/context/exchangeContext";
+
+const leftDoubleArrowIcon = (
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 18 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M8.73874 5.16298L4.90165 9.00007L8.73874 12.8372L7.41291 14.163L2.25 9.00007L7.41291 3.83716L8.73874 5.16298Z"
+      fill="#494656"
+    />
+    <path
+      d="M15.4887 5.16297L11.6517 9L15.4887 12.837L14.1629 14.1628L9 9L14.1629 3.83716L15.4887 5.16297Z"
+      fill="#494656"
+    />
+  </svg>
+);
 
 export const RouteCardList:FC = () => {
   const {selectedRoute, setSelectedRoute} = useExchange();
@@ -14,13 +32,11 @@ export const RouteCardList:FC = () => {
     setSelectedRoute(route);
   }
 
-  console.log('selectedRoute', selectedRoute)
-
   return (
     <div className="w-full">
       <Card
         title="Select Route"
-        icon={<LeftDoubleArrowIcon />}
+        icon={leftDoubleArrowIcon}
         bgColor="bg-white"
         width="w-[520px]"
       >
