@@ -27,13 +27,14 @@ const Header: FC = () => {
           {Routes.map((route) => {
             if (route?.title) {
               return (
-                <li className="flex items-center">
+                <li className="flex items-center" key={route.id}>
                   <Link key={route.id} href={route.path}>
                     <div className={`font-manrope font-600 text-sm py-2 px-3 ${isActiveNav === route.path ? 'flex items-center justify-center bg-primary border-[1px] rounded-[12px] text-secondary': 'text-lowGrey'}`}>{route.title}</div>
                   </Link>
                 </li>
               );
             }
+            return null;
           })}
         </ul>
       </nav>
