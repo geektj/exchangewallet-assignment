@@ -15,7 +15,9 @@ const Header: FC = () => {
   const pathname = usePathname();
 
   const isActiveNav = useMemo(() => {
-    return Routes.find(nav => pathname.includes(nav.path))?.path || ''
+    const activeRoute = Routes.find(nav => pathname.includes(nav.path))
+    return activeRoute ? activeRoute.path: '/swap';
+
   },[pathname])
 
   return (
