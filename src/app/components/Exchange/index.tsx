@@ -10,13 +10,20 @@ import BNBIcon from "../../assets/bnbIcon.svg";
 import SolIcon from "../../assets/solanaIcon.svg";
 import ReverseIcon from '../../assets/reverse.svg'
 import { ExchangeContainerProps } from "./@types";
+import { useExchange } from "@/app/context/exchangeContext";
 
 export const ExchangeContainer = ({
   exchangeData,
   userInfo,
 }: ExchangeContainerProps) => {
-  const [sellValue, setSellValue] = useState("0.0");
-  const [recciveValue, setRecciveValue] = useState("0.0");
+
+  const {
+    sellValue,
+    setSellValue,
+    recciveValue,
+    setRecciveValue,
+  } = useExchange();
+
   const [sellSelectedCurrency, setSellSelectedCurrency] = useState('eth');
   const [recciveSelectedCurrency, setRecciveSelectedCurrency] = useState('matic');
 

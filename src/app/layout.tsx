@@ -1,9 +1,9 @@
-// "use client"
 import type { Metadata } from "next";
 // import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/Header";
 import { Manrope } from "next/font/google";
+import { ExchangeProvider } from "./context/exchangeContext";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -34,12 +34,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${manrope.className} antialiased`}>
+      <ExchangeProvider>
         <div className="h-screen">
           <Header />
           <div className="bg-custom-background bg-cover bg-center h-full lg:h-[79%]">
             {children}
           </div>
         </div>
+        </ExchangeProvider>
       </body>
     </html>
   );

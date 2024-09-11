@@ -5,8 +5,17 @@ import Image from "next/image";
 // import { RouteDataProps } from '@/app/shared/RouteData/type';
 import { RouteInfo } from "@/app/shared/RouteData/routeInfo";
 import GasIcon from "@/app/assets/defaultGas.svg";
+import { useExchange } from "@/app/context/exchangeContext";
 
 export const RouteCardList:FC = () => {
+  const {selectedRoute, setSelectedRoute} = useExchange();
+  
+  const handleRouteClick = (route: typeof RouteInfo[0]) => {
+    setSelectedRoute(route);
+  }
+
+  console.log('selectedRoute', selectedRoute)
+
   return (
     <div className="w-full">
       <Card
@@ -22,8 +31,9 @@ export const RouteCardList:FC = () => {
           <div className="px-[8px]">
             {RouteInfo.map((routeDetail: any) => (
               <div
-                className="px-4 py-2 lg:py-3 grid lg:flex items-center justify-between"
+                className={`px-4 py-2 lg:py-3 grid lg:flex items-center justify-between cursor-pointer ${routeDetail?.id === selectedRoute?.id ? "rounded-[16px] border-[2px] border-borderGreen" : ""}`}
                 key={routeDetail.id}
+                onClick={() => handleRouteClick(routeDetail)}
               >
                 <div className="flex gap-2 items-center">
                   <Image src={routeDetail?.icon} alt="icons" width={32} height={32} />
