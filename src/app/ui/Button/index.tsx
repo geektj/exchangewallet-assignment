@@ -5,7 +5,6 @@ import { baseCX, dangerCX, primaryCX } from "./styles";
 export const Button: FC<ButtonProps> = ({
   children,
   onClick,
-  primary,
   danger,
 }) => (
   <button

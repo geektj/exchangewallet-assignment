@@ -6,7 +6,7 @@ export interface ExchangeContainerProps {
 }
 
 export interface ExchangeCardProps {
-  onChange: (e: any) => void;
+  onChange: (e: OnChangeEvent) => void;
   labelText: string;
   inputValue: string;
   convertedAmount: string;
